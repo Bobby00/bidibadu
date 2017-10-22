@@ -1,0 +1,43 @@
+/* stroke */
+div.stroke a,
+div.fill a {
+  position: relative;
+}
+div.stroke a:after,
+div.fill a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+div.stroke a:hover:after {
+  width: 100%;
+}
+
+div.fill a {
+  transition: all 2s;
+}
+
+div.fill a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+div.fill a:hover {
+  color: #fff;
+  z-index: 1;
+}
+div.fill a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
